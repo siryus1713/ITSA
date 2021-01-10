@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+signed main()
+{
+	char str[256];
+	char string[1024];
+    int count=0;
+	
+	scanf("%s",str);
+	scanf("%s",string);
+	
+	for(int i=0;i<strlen(string);i++)
+	{	
+		
+			for(int s=0;s<strlen(str);s++)
+			{
+				if(str[s]!=string[i+s])
+				{
+                    break ;
+                }
+             if(s==strlen(str)-1)count++;
+			}
+	}printf("%d\n",count);
+}
