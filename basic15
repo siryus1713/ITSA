@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+int n=0,alpha[26];  //儲存段落,字母出現次數
+
+signed main()
+{
+	
+	char s[99999];
+	
+	while(scanf("%s",&s)!=EOF)
+	{
+		for(int i=0;i<strlen(s);i++)      //字串看過去
+		{
+			for(int a=0;a<26;a++)
+			{
+				if(s[i]==97+a || s[i]==65+a)    //利用ASCII 判斷字母
+				{
+					alpha[a]++;     
+				}
+			}
+		}
+		n++;
+	}
+  
+	printf("%d\n",n);
+	for(int i=0;i<26;i++)
+	{
+		if(alpha[i]!=0)
+		{
+			printf("%c : %d\n",97+i,alpha[i]);
+		}
+	}
+	
+
+}
