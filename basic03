@@ -1,0 +1,19 @@
+#include <stdio.h>  
+  
+signed main()  
+{     
+    int n,m;  
+ 
+    while(scanf("%d%d",&n,&m)==2)  //讀入XY座標
+    {  
+  
+        if((n*n)+(m*m)>40000)  //40000=200*200 判斷是否在園內
+        {  
+            printf("outside\n");  
+        }  
+        else  
+        {  
+            printf("inside\n");  
+        }  
+    }  
+}  
