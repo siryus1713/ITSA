@@ -1,0 +1,27 @@
+#include <stdio.h>
+ 
+signed main(void) 
+{
+
+	int in_hour,in_mins;
+	int out_hour,out_mins;
+	int fee;
+  
+	scanf("%d%d%d%d",&in_hour,&in_mins,&out_hour,&out_mins);//讀入進出場時間
+	int time=(60*out_hour+out_mins)-(60*in_hour+in_mins); 換算成分鐘
+ 
+	if(time>0&&time<=120)
+	{
+		fee=time/30*30;    //小於兩小時費用
+	}
+	else if(time>120&&time<=240)
+	{
+		fee=120+(time-120)/30*40;  //2-4小時費用
+	}
+	else 
+	{
+		fee=120+160+((time-240)/30)*60;  //超過4小時費用
+	}
+	printf("%d\n",fee);
+	return 0;
+}
