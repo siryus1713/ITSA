@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+signed main() 
+{
+	
+	int a=0,b=0;
+	int matrix[3000][3000];
+	
+	memset(matrix,0,sizeof(matrix));
+	
+	while(scanf("%d%d",&a,&b)==2)
+	{
+		for(int i=0;i<a;i++)
+		{
+			for(int j=0;j<b;j++)
+			{
+				scanf("%d",&matrix[i][j]);
+			}
+		}
+		
+			for(int i=0;i<b;i++)
+		{
+			for(int j=0;j<a;j++)
+			{
+				printf("%d ",matrix[j][i]);
+			}printf("\n");
+		}
+		memset(matrix,0,sizeof(matrix));
+	}
+}
