@@ -1,0 +1,15 @@
+#include <stdio.h>
+ 
+ 
+signed main()
+{
+
+	int n;scanf("%d",&n);
+ 
+	if(n==1 || n==12 ||n==2)printf("Winter\n"); //2月1月12月  冬天
+	else if(n>=3 && n<=5)printf("Spring\n");   //3到5月 春天'
+	else if(n<=8)printf("Summer\n");          //6到8月 夏天
+	else printf("Autumn\n");                 //其餘秋天
+ 
+ 
+}
