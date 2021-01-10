@@ -1,0 +1,32 @@
+#include <stdio.h>
+ 
+signed main()
+{
+	int t=0;scanf("%d",&t);
+	char co;
+ 
+	while(t--)
+	{
+		int a,b,c,d;
+ 
+		scanf(" %c",&co);    //運算符號
+		scanf("%d%d%d%d",&a,&b,&c,&d);  //複數 a+bj c+dj
+ 
+		if(co=='+')
+		{
+			printf("%d %d\n",a+c,b+d);
+		}
+		if(co=='-')
+		{
+			printf("%d %d\n",a-c,b-d);
+		}
+		if(co=='*')
+		{
+			printf("%d %d\n",a*c-b*d,b*c+a*d);
+		}
+		if(co=='/')
+		{
+			printf("%d %d\n",a*c-b*d,b*c+a*d);
+		}
+	}
+}
