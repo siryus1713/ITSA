@@ -1,0 +1,40 @@
+#include <stdio.h>
+ 
+signed main() 
+{
+	int o[3][3];
+	int sum[9];
+	int flag=0;     //是否連線
+ 
+	for(int i=0;i<3;i++)
+	{
+		for(int j=0;j<3;j++)
+		{
+			scanf(" %d",&o[i][j]);
+		}
+	}
+ 
+	sum[0]=o[0][0]+o[0][1]+o[0][2];
+	sum[1]=o[1][0]+o[1][1]+o[1][2];
+	sum[2]=o[2][0]+o[2][1]+o[2][2];
+	sum[3]=o[0][0]+o[1][1]+o[2][2];
+	sum[4]=o[0][0]+o[1][0]+o[2][0];
+	sum[5]=o[0][1]+o[1][1]+o[2][1];
+	sum[6]=o[0][2]+o[1][2]+o[2][2];
+	sum[7]=o[0][2]+o[1][1]+o[2][0];
+ 
+	for(int i=0;i<8;i++)
+	{
+		if(sum[i]==0 || sum[i]==3)    //全部一方獲得
+		{
+			flag=1;
+		    printf("True\n");
+		}
+	}
+ 
+	if(flag==0)
+	{
+		printf("False\n");
+	}
+ 
+}
