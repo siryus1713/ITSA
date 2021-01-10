@@ -1,0 +1,8 @@
+#include <stdio.h>
+ 
+signed main()
+{
+	int n;scanf("%d",&n);
+  n/=3;     //先找被3除後的數字
+	printf("%d\n",n*(n+1)/2*3);//利用梯形公式來算合再乘回3
+}
