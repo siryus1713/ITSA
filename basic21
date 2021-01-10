@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+signed main() 
+{
+	set<float> sf;    
+	float f;
+ 
+	while(cin>>f)
+	{
+		sf.insert(f);
+	}
+ 
+	cout<<"maximum:"<<fixed<<setprecision(2)<<*sf.rbegin()<<endl;//fixed 整數部分 setprecision小數點後位數
+	cout<<"minimum:"<<fixed<<setprecision(2)<<*sf.begin()<<endl;
+  
+}
