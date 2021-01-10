@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+long double n,sum;
+long int t,m;
+
+int main(void)
+{
+	
+	scanf("%LF%d%d",&n,&t,&m);
+
+	while(t--)
+	{
+		sum += m;
+		sum *= (1.0+n);
+	}
+	
+	printf("%lld\n",(long long int)sum);//強制轉型long long int
+}
