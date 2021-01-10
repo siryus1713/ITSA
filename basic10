@@ -1,0 +1,29 @@
+#include <stdio.h>
+ 
+ 
+int e(int a,int b);
+ 
+signed main() 
+{
+ 
+	int s,q;scanf("%d%d",&s,&q);  //讀近兩個數字
+	int O,o;
+  
+	if(q>s)     //O為大 o為小
+	{
+		O=q;o=s;
+	}
+	else 
+	{
+		O=s;o=q;
+	}
+	printf("%d\n",e(O,o));
+ 
+}
+ 
+int e(int a,int b)      //輾轉相除
+{
+	int f=a%b;
+	if(f==0) return b;
+	else return e(b,f);
+}
