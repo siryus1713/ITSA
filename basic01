@@ -2,14 +2,14 @@
 #include <stdlib.h>  
 #include <string.h>  
   
-void zero(char z[5][5])   
+void zero(char z[5][5])   //print0
 {  
-    for (int i = 0; i < 5; i++)  
-    { //*****  
+    for (int i = 0; i < 5; i++)  //*****   
+    {
         z[0][i] = '*';  
     }  
-    for (int i = 1; i < 4; i++)  
-    { //*   *  
+    for (int i = 1; i < 4; i++)   //*   *  
+    {
         z[i][0] = '*';  
         for (int u = 1; u <= 3; u++)  
         {  
@@ -18,13 +18,13 @@ void zero(char z[5][5])
         z[i][4] = '*';  
     }  
   
-    for (int i = 0; i < 5; i++)  
-    { //*****  
+    for (int i = 0; i < 5; i++)  //*****  
+    { 
         z[4][i] = '*';  
     }  
 }  
   
-void one(char on[5][5])  
+void one(char on[5][5])  //print 1
 {  
     for (int i = 0; i <= 4; i++)  
     {  
@@ -105,7 +105,7 @@ void three(char th[5][5])
     }  
 }  
   
-void four(char fu[5][5])  
+void four(char fu[5][5])  //print 4
 {  
     //*...*  
     fu[0][0] = '*';  
@@ -144,7 +144,7 @@ void four(char fu[5][5])
     fu[4][4] = '*';  
 }  
   
-void five(char fi[5][5])  
+void five(char fi[5][5])  //print 5
 {  
     //*****  
     for (int j = 0; j < 5; j++)  
@@ -233,38 +233,34 @@ void seven(char se[5][5])
     }  
 }  
   
-void eight(char ig[5][5])  
+void eight(char ig[5][5])  //printf 8
 {  
-    //*****  
-    for (int j = 0; j < 5; j++)  
+    
+    for (int j = 0; j < 5; j++)  //*****  
     {  
         ig[0][j] = '*';  
     }  
   
-    //*...*  
     ig[1][0] = '*';  
-    for (int j = 1; j < 4; j++)  
+    for (int j = 1; j < 4; j++)   //*...*  
     {  
         ig[1][j] = ' ';  
     }  
     ig[1][4] = '*';  
   
-    //*****  
-    for (int j = 0; j < 5; j++)  
+    for (int j = 0; j < 5; j++)    //*****  
     {  
         ig[2][j] = '*';  
     }  
   
-    //*...*  
-    ig[3][0] = '*';  
+    ig[3][0] = '*';               //*...*  
     for (int j = 1; j < 4; j++)  
     {  
         ig[3][j] = ' ';  
     }  
     ig[3][4] = '*';  
   
-    //*****  
-    for (int j = 0; j < 5; j++)  
+    for (int j = 0; j < 5; j++)   //*****  
     {  
         ig[4][j] = '*';  
     }  
@@ -272,35 +268,30 @@ void eight(char ig[5][5])
   
 void nine(char ni[5][5])  
 {  
-    //*****  
-    for (int j = 0; j < 5; j++)  
+    for (int j = 0; j < 5; j++)   //*****  
     {  
         ni[0][j] = '*';  
     }  
-  
-    //*...*  
-    ni[1][0] = '*';  
+   
+    ni[1][0] = '*';              //*...*  
     for (int j = 1; j < 4; j++)  
     {  
         ni[1][j] = ' ';  
     }  
     ni[1][4] = '*';  
   
-    //*****  
-    for (int j = 0; j < 5; j++)  
+    for (int j = 0; j < 5; j++)    //*****  
     {  
         ni[2][j] = '*';  
     }  
   
-    //....*  
-    for (int j = 0; j < 4; j++)  
+    for (int j = 0; j < 4; j++)     //....*  
     {  
         ni[3][j] = ' ';  
     }  
     ni[3][4] = '*';  
   
-    //....*  
-    for (int j = 0; j < 4; j++)  
+    for (int j = 0; j < 4; j++)   //....*  
     {  
         ni[4][j] = ' ';  
     }  
@@ -315,116 +306,115 @@ char yu[5][20];
   
 int main()  
 {  
-    int n, m, s, l;  
-    while(scanf("%1d%1d%1d%1d", &n, &m, &s, &l) != EOF)  
-    {  
-        if (n == 0)  
-            zero(f);  
-        if (n == 1)  
-            one(f);  
-        if (n == 2)  
-            two(f);  
-        if (n == 3)  
-            three(f);  
-        if (n == 4)  
-            four(f);  
-        if (n == 5)  
-            five(f);  
-        if (n == 6)  
-            six(f);  
-        if (n == 7)  
-            seven(f);  
-        if (n == 8)  
-            eight(f);  
-        if (n == 9)  
-            nine(f);  
-  
-        if (m == 0)  
-            zero(u);  
-        if (m == 1)  
-            one(u);  
-        if (m == 2)  
-            two(u);  
-        if (m == 3)  
-            three(u);  
-        if (m == 4)  
-            four(u);  
-        if (m == 5)  
-            five(u);  
-        if (m == 6)  
-            six(u);  
-        if (m == 7)  
-            seven(u);  
-        if (m == 8)  
-            eight(u);  
-        if (m == 9)  
-            nine(u);  
-  
-        if (s == 0)  
-            zero(c);  
-        if (s == 1)  
-            one(c);  
-        if (s == 2)  
-            two(c);  
-        if (s == 3)  
-            three(c);  
-        if (s == 4)  
-            four(c);  
-        if (s == 5)  
-            five(c);  
-        if (s == 6)  
-            six(c);  
-        if (s == 7)  
-            seven(c);  
-        if (s == 8)  
-            eight(c);  
-        if (s == 9)  
-            nine(c);  
-  
-        if (l == 0)  
-            zero(k);  
-        if (l == 1)  
-            one(k);  
-        if (l == 2)  
-            two(k);  
-        if (l == 3)  
-            three(k);  
-        if (l == 4)  
-            four(k);  
-        if (l == 5)  
-            five(k);  
-        if (l == 6)  
-            six(k);  
-        if (l == 7)  
-            seven(k);  
-        if (l == 8)  
-            eight(k);  
-        if (l == 9)  
-            nine(k);  
-  
-        for (int i = 0; i < 5; i++)  
-        {  
-            for (int j = 0; j < 5; j++)  
-            {  
-                printf("%c", f[i][j]);  
-            }  
-            printf(" ");  
-            for (int j = 0; j < 5; j++)  
-            {  
-                printf("%c", u[i][j]);  
-            }  
-            printf(" ");  
-            for (int j = 0; j < 5; j++)  
-            {  
-                printf("%c", c[i][j]);  
-            }  
-            printf(" ");  
-            for (int j = 0; j < 5; j++)  
-            {  
-                printf("%c", k[i][j]);  
-            }  
-            //printf(" ");  
-            printf("\n");  
-        }  
-    }  
+    int c1, c2, c3, c4; 
+    
+    while(scanf("%1d%1d%1d%1d", &c1, &c2, &c3, &c4) != EOF) //讀入數字
+    { 
+        if (c1 == 0) 
+            zero(f); 
+        if (c1 == 1) 
+            one(f); 
+        if (c1 == 2) 
+            two(f); 
+        if (c1 == 3) 
+            three(f); 
+        if (c1 == 4) 
+            four(f); 
+        if (c1 == 5) 
+            five(f); 
+        if (c1 == 6) 
+            six(f); 
+        if (c1 == 7) 
+            seven(f); 
+        if (c1 == 8) 
+            eight(f); 
+        if (c1 == 9) 
+            nine(f); 
+ 
+        if (c2 == 0) 
+            zero(u); 
+        if (c2 == 1) 
+            one(u); 
+        if (c2 == 2) 
+            two(u); 
+        if (c2 == 3) 
+            three(u); 
+        if (c2 == 4) 
+            four(u); 
+        if (c2 == 5) 
+            five(u); 
+        if (c2 == 6) 
+            six(u); 
+        if (c2 == 7) 
+            seven(u); 
+        if (c2 == 8) 
+            eight(u); 
+        if (c2 == 9) 
+            nine(u); 
+ 
+        if (c3 == 0) 
+            zero(c); 
+        if (c3 == 1) 
+            one(c); 
+        if (c3 == 2) 
+            two(c); 
+        if (c3 == 3) 
+            three(c); 
+        if (c3 == 4) 
+            four(c); 
+        if (c3 == 5) 
+            five(c); 
+        if (c3 == 6) 
+            six(c); 
+        if (c3 == 7) 
+            seven(c); 
+        if (c3 == 8) 
+            eight(c); 
+        if (c3 == 9) 
+            nine(c); 
+ 
+        if (c4 == 0) 
+            zero(k); 
+        if (c4 == 1) 
+            one(k); 
+        if (c4 == 2) 
+            two(k); 
+        if (c4 == 3) 
+            three(k); 
+        if (c4 == 4) 
+            four(k); 
+        if (c4 == 5) 
+            five(k); 
+        if (c4 == 6) 
+            six(k); 
+        if (c4 == 7) 
+            seven(k); 
+        if (c4 == 8) 
+            eight(k); 
+        if (c4 == 9) 
+            nine(k); 
+ 
+        for (int i = 0; i < 5; i++) 
+        { 
+            for (int j = 0; j < 5; j++) 
+            { 
+                printf("%c", f[i][j]); 
+            } 
+            printf(" "); 
+            for (int j = 0; j < 5; j++) 
+            { 
+                printf("%c", u[i][j]); 
+            } 
+            printf(" "); 
+            for (int j = 0; j < 5; j++) 
+            { 
+                printf("%c", c[i][j]); 
+            } 
+            printf(" "); 
+            for (int j = 0; j < 5; j++) 
+            { 
+                printf("%c", k[i][j]); 
+            } 
+            printf("\n");
+    
 }  
