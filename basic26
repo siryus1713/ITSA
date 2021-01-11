@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int num[102][10];
+int cmp(void *_a, void *_b)
+{
+    int *a = (int *)_a;
+    int *b = (int *)_b;
+    if(*a == 0) return 1;
+    if(*b == 0) return -1;
+    return (*a - *b);
+}
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int nums[n];
+    memset(nums, 0, sizeof(nums));
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &nums[i]);
+        int x = nums[i];
+        int sum = 0;
+
+        while (x > 0)
+        {
+            sum += x % 10;
+            x /= 10;
+        }
+        //printf("%d\n",sum);
+
+        for (int j = 0; j < 10; j++)
+        {
+            if (num[sum][j] == 0)
+            {
+                num[sum][j] = nums[i];
+                break;
+            }
+        }
+
+    }
+    int cou = 0;
+	int first = 1;
+    for (int i = 0; i <=99 ;i++)
+    {
+        qsort(num[i], 10, sizeof(int), cmp);
+        for (int d = 0; d < 10; d++)
+        {
+            if (num[i][d] != 0)
+            {
+            	if(first)
+            	{
+                	printf("%d", num[i][d]);
+            		first = 0;
+            	}
+            	else
+            	{
+            		printf(" %d", num[i][d]);
+            	}
+            }
+        }
+    }
+    printf("\n");
+}
+
