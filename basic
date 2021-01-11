@@ -1,0 +1,45 @@
+#include <stdio.h> 
+#include <stdlib.h> 
+  
+int compare(const void *a, const void *b)// qsort 所需的比較函式 
+{ 
+      int c = *(int *)a; 
+      int d = *(int *)b; 
+      if(c < d) {return -1;}              //傳回 -1 代表 a < b 
+      else if (c == d) {return 0;}      //傳回   0 代表 a = b 
+      else return 1;                   //傳回  1 代表 a>b 
+} 
+  
+int main() 
+{ 
+    int n=0; scanf("%d",&n); 
+  
+ while(n--) 
+ { 
+      int m,p,c; 
+     scanf("%d%d%d",&m,&p,&c); 
+      int chase[c]; 
+    
+     for(int i=0;i<c;i++) 
+            scanf("%d",&chase[i]); 
+     
+        int sum=0; 
+   qsort(chase,c, sizeof(chase[0]), compare); 
+  
+       for(int i=0;i<p;i++) 
+        { 
+          sum+=chase[i]; 
+     } 
+  
+        if(m>=sum) 
+       { 
+          printf("%d\n",sum);
+        } 
+      else 
+       { 
+           printf("Impossible\n"); 
+        } 
+  
+    } 
+  
+}  
