@@ -1,0 +1,99 @@
+#include <stdio.h>
+#include <string.h>
+
+int S[15], H[15], D[15], C[15];
+
+signed main()
+{
+    int n = 0;
+    char s;
+    int t = 0;
+    scanf("%d", &t);
+
+    while (t--)
+    {
+        char c;
+        while (scanf(" %c%d", &s, &n) == 2)
+        {
+            if (s == 'S')
+                S[n]++;
+            if (s == 'H')
+                H[n]++;
+            if (s == 'D')
+                D[n]++;
+            if (s == 'C')
+                C[n]++;
+            c = getchar();
+
+            if (c == '\n' || c == EOF || c == '\r')
+            {
+                break;
+            }
+            //printf("%c%d ",s,n);
+            //setbuf(stdin, NULL);
+        }
+
+        int fisrt = 0;
+        for (int i = 13; i >= 1; i--) //s
+        {
+            if (S[i] == 1 && fisrt == 0)
+            {
+                fisrt = 1;
+                printf("S%d", i);
+            }
+            else if (S[i] == 1)
+            {
+                printf(" S%d", i);
+            }
+            else if (S[i] == 2)
+            {
+                printf(" S%d", i);
+            }
+        }
+
+        for (int i = 13; i >= 1; i--) //H
+        {
+            if (H[i] == 1 && fisrt == 0)
+            {
+                fisrt = 1;
+                printf("H%d", i);
+            }
+            else if (H[i] == 1)
+            {
+                printf(" H%d", i);
+            }
+        }
+
+        for (int i = 13; i >= 1; i--) //dimand
+        {
+            if (D[i] == 1 && fisrt == 0)
+            {
+                fisrt = 1;
+                printf("D%d", i);
+            }
+            else if (D[i] == 1)
+            {
+                printf(" D%d", i);
+            }
+        }
+
+        for (int i = 13; i >= 1; i--)
+        {
+            if (C[i] == 1 && fisrt == 0)
+            {
+                fisrt = 1;
+                printf("C%d", i);
+            }
+            else if (C[i] == 1)
+            {
+                printf(" C%d", i);
+            }
+        }
+        printf("\n");
+
+        memset(S, 0, sizeof(S));
+        memset(H, 0, sizeof(H));
+        memset(D, 0, sizeof(D));
+        memset(C, 0, sizeof(C));
+    }
+}
