@@ -1,18 +1,34 @@
+/*
 #include <bits/stdc++.h>
- 
 using namespace std;
- 
 signed main() 
 {
 	set<float> sf;    
 	float f;
  
 	while(cin>>f)
-	{
 		sf.insert(f);
-	}
- 
+	
 	cout<<"maximum:"<<fixed<<setprecision(2)<<*sf.rbegin()<<endl;//fixed 整數部分 setprecision小數點後位數
 	cout<<"minimum:"<<fixed<<setprecision(2)<<*sf.begin()<<endl;
-  
+}
+*/
+#include <stdio.h>
+
+signed main()
+{
+	double temp,n;
+	double max,min;
+	
+	scanf("%lf", &temp);
+	max=min=temp;   
+
+	
+	while((scanf("%lf", &temp) == 1) && (getchar() != '\n'))
+	{
+		if (max <= temp) max = temp;
+		if (min >= temp) min = temp;
+	}
+
+	printf("maximum:%.2f\nminimum:%.2f\n",max,min);
 }
