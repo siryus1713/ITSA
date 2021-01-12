@@ -1,0 +1,69 @@
+#include <stdio.h>  
+#include <string.h>  
+#define INF 0x3f3f3f3f  
+signed main()  
+{  
+    int n = 0;  
+    int ind = 0;  
+    int arr[5958];  
+    int sum[9999][2];  
+    char c;  
+  
+    while (scanf("%d", &n) != EOF)  
+    {  
+        arr[ind++] = n;  
+        char ch = getchar();  
+  
+        if (ch == '\n' || ch == EOF || ch == '\r')  
+        {  
+            memset(sum, INF, sizeof(sum));  
+              
+            for (int i = 0; i < ind; i++)  
+            {  
+                for (int j = 0; j < ind; j++)  //計算出線次數  
+                {  
+                    if (sum[j][0] == arr[i])  
+                    {  
+                        sum[j][1]++;  
+                        break;  
+                    }  
+                    else if (sum[j][0] == INF)  
+                    {  
+                        sum[j][0] = arr[i];  
+                        sum[j][1] = 1;  
+                        break;  
+                    }  
+                }  
+            }  
+  
+            int num = 0;  
+            int ok = 0;  
+  
+            for (int m = 0; m < ind; m++)  
+            {  
+                if (sum[m][1] > ind / 2 && sum[m][1] != INF)  
+                {  
+                    num = sum[m][0];  
+                    ok = 1;  
+                }  
+            }  
+            if (ok == 1)  
+            {  
+                printf("%d\n", num);  
+            }  
+            else  
+            {  
+                printf("NO\n");  
+            }  
+              
+            memset(arr, 0, sizeof(arr));  
+  
+            ind = 0;  
+        }  
+        if (ch == EOF)  
+        {  
+            break;  
+        }  
+    }  
+    
+} 
