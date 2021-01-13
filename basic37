@@ -1,0 +1,62 @@
+#include <stdio.h>  
+int num[6];  
+signed main()  
+{  
+    int s=0;  
+      
+    for(int i=0;i<4;i++)  
+    {  
+        scanf("%d",&s);  
+        for(int u=0;u<6;u++)  
+        {  
+            if(s==u+1)num[u]++;  
+        }  
+    }  
+      
+    for(int i=0;i<6;i++)  
+    {  
+        if(num[i]==4)  
+        {  
+            printf("WIN\n");  
+            return 0;     
+        }  
+    }  
+      
+    int twice=0;  
+      
+    for(int i=0;i<6;i++)  
+    {  
+        if(num[i]==2)  
+            twice++;  
+    }  
+      
+    int total=0;  
+      
+    if(twice==0)  
+    {  
+        printf("R\n");  
+        return 0;  
+    }  
+    else if(twice==1)  
+    {  
+        for(int i=0;i<6;i++)  
+        {  
+            if(num[i]==1)  
+            {  
+                total+=(i+1);  
+            }  
+        }  
+    }  
+    else if(twice==2)  
+    {  
+        for(int i=5;i>0;i--)  
+        {  
+            if(num[i]==2)  
+            {   
+                total=2*(i+1);  
+                break;  
+            }  
+        }  
+    }      
+    printf("%d\n",total);  
+}  
