@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+//題目18. QWERTY
+char a[]="!@#$%^&*()_++`1234567890-=={}||qwertyuiop[]\\:""asdfghjkl;''<>??zxcvbnm,.//";
+
+signed main()
+{
+	char c;
+	
+	while(scanf("%c",&c)!=EOF)
+	{
+		//printf("%c",c);
+		c=tolower(c);
+		if(c==' ')
+		{
+			printf(" ");
+			continue;
+		}
+	
+		for(int i=0;i<=sizeof(a);i++)
+		{
+			if(a[i]==c)
+			{
+				printf("%c",a[i+1]);
+			}
+		}
+		
+	}printf("\n");
+}
