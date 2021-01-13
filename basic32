@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() 
+{
+	char s[102];
+	int n=0;
+	scanf("%[^\r\n]",&s);
+	scanf("%d",&n);
+	int l=strlen(s);
+	for(int i=0;i<l;i++)
+	{
+		int z=s[i];
+		
+		if(z>='a' && z<='z')
+		{
+			z+=n;
+			if(z>122)
+			{
+				z-=26;
+			}
+		}
+		 if(z>='A' && z<='Z')
+		{
+			z+=n;
+			if(z>90)
+			{
+				z-=26;
+			}
+		}
+		 if(z>='0' && z<='9')
+		{
+			z+=n;
+			if(z>57)
+			{
+				z-=10;
+			}
+		}
+		printf("%c",z);
+	}
+	printf("\n");
+}
