@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+//題目17. 英文斷詞
+char s[1002][1002];
+char string[1002];
+
+signed main()
+{
+	int i=0; char c;
+	
+	while(scanf("%[^ \n\r]",string)!=EOF)
+	{
+		for(int y = 0; y < sizeof(string); y++)
+		{
+			string[y] = tolower(string[y]);
+		}
+		int even=0;
+		scanf("%*c");
+		
+		for(int n=0;n<i;n++)
+		{
+			if(strcmp(string,s[n])==0)
+			{
+				even=1;
+			}
+		}
+		
+		if(even==0)
+		{
+			strcpy(s[i],string);
+			i++;
+		}
+	}
+	
+	printf("%s",s[0]);
+	
+	for(int u=1;u<i;u++)
+	{
+		printf(" %s",s[u]);
+	}
+	printf("\n");
+}
