@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+signed main() 
+{
+	int n=0;scanf("%d",&n);
+	
+	while(n--)
+	{
+		int a,b,c,f=0;
+		scanf("%d%d%d",&a,&b,&c);
+        if(a<60)f++;
+        if(b<60)f++;
+        if(c<60)f++;
+		
+		if(f==0)
+		{
+			printf("P\n");
+			continue;
+		}
+		
+		 if(a+b+c>=220 && f==1)
+		{
+			printf("P\n");
+			continue;
+		}
+		else if((a+b+c<=220) && f==1)
+		{
+			printf("M\n");
+			continue;
+		}
+		
+		 if( (f==2 && c>=80) || (f==2 && a>=80)|| ( f==2 && b>=80))
+		{
+			printf("M\n");
+			continue;
+		}
+		else
+		{
+			printf("F\n");
+		}	
+	}
+	// your code goes here
+	return 0;
+}
