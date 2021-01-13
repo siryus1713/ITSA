@@ -1,0 +1,111 @@
+#include <stdio.h>  
+#include <string.h>  
+#define ll long long int  
+int fapiaw[100005];  
+signed main()  
+{  
+    int s = 0;  
+    int tal[3];  
+    scanf("%d", &s);  
+  
+    for (int i = 0; i < 3; i++)  
+    {  
+        scanf("%d", &tal[i]);  
+    }  
+  
+    int n = 0;  
+    scanf("%d", &n);  
+  
+    for (int i = 0; i < n; i++)  
+    {  
+        scanf("%d", &fapiaw[i]);  
+    }  
+    int m[8];  
+    memset(m, 0, sizeof(m));  
+    ll money = 0;  
+  
+    for (int f = 0; f < n; f++)  
+    {  
+        int ss = 0;  
+        if (s == fapiaw[f]) //special price  
+        {  
+            m[0]++;  
+            money += 2000000;  
+            ss = 2000000;  
+            continue;  
+        }  
+  
+        for (int i = 0; i < 3; i++)  
+        {  
+            if (fapiaw[f] == tal[i] && ss < 200000)  
+            {  
+                m[1]++;  
+                ss = 200000;  
+                money += 200000;  
+                break;  
+            }  
+        }  
+  
+        for (int i = 0; i < 3; i++)  
+        {  
+            if ((fapiaw[f] % 10000000 == tal[i] % 10000000) && ss < 40000)  
+            {  
+                m[2]++;  
+                ss = 40000;  
+                money += 40000;  
+                break;  
+            }  
+        }  
+  
+        for (int i = 0; i < 3; i++)  
+        {  
+            if ((fapiaw[f] % 1000000 == tal[i] % 1000000) && ss < 10000)  
+            {  
+                m[3]++;  
+                ss = 10000;  
+                money += 10000;  
+                break;  
+            }  
+        }  
+  
+        for (int i = 0; i < 3; i++)  
+        {  
+            if ((fapiaw[f] % 100000 == tal[i] % 100000) && ss < 4000)  
+            {  
+                m[4]++;  
+                ss = 4000;  
+                money += 4000;  
+                break;  
+            }  
+        }  
+  
+        for (int i = 0; i < 3; i++)  
+        {  
+            if ((fapiaw[f] % 10000 == tal[i] % 10000) && ss < 1000)  
+            {  
+                m[5]++;  
+                ss = 1000;  
+                money += 1000;  
+                break;  
+            }  
+        }  
+        for (int i = 0; i < 3; i++)  
+        {  
+            if ((fapiaw[f] % 1000 == tal[i] % 1000) && ss < 200)  
+            {  
+                m[6]++;  
+                ss = 200;  
+                money += 200;  
+                break;  
+            }  
+        }  
+    }  
+    printf("%d", m[0]);  
+    for (int i = 1; i < 7; i++)  
+    {  
+        printf(" %d", m[i]);  
+    }  
+    printf("\n");  
+  
+    printf("%lld\n", money);  
+}
